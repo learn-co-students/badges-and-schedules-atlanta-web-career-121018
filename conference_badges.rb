@@ -1,28 +1,21 @@
 
 def badge_maker(name)
-  return "Hello, my name is #{name}."
+    "Hello, my name is #{name}."
 end
 
 
 def batch_badge_creator (array)
-  newarr = []
-  array.each do |x|
-    newarr.push("Hello, my name is #{x}.")
-  end
-  return newarr
+    array.map do |x|
+        "Hello, my name is #{x}."
+    end
 end
 
 
 def assign_rooms(names)
-  finalListArr = []
-  counter = 1
-  names.each do |x|
-    finalListArr.push("Hello, #{x}! You'll be assigned to room #{counter}!")
-    counter += 1
-  end
-  return finalListArr
+    names.each_with_index.map do |names, index|
+        "Hello, #{names}! You'll be assigned to room #{index + 1}!"
+    end
 end
-
 
 # def printer(attendees)
 #   attendees.each do |x|
@@ -34,22 +27,10 @@ end
 # end
 
 def printer(attendees)
-  batch_badge_creator(attendees).each do |x|
-    puts x
-  end
-  assign_rooms(attendees).each do |x|
-    puts x
-  end
+    batch_badge_creator(attendees).each do |x|
+        puts x
+    end
+    assign_rooms(attendees).each do |x|
+        puts x
+    end
 end
-
-
-
-
-
-
-
-
-
-
-
-
